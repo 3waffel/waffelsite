@@ -17,7 +17,7 @@ jobs:
           persist-credentials: false
         
       - name: Install
-        run: yarn install
+        run: yarn install --frozen-lockfile
 
       - name: Build
         run: yarn build --production
@@ -25,5 +25,5 @@ jobs:
       - name: Deploy to GH Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: build
